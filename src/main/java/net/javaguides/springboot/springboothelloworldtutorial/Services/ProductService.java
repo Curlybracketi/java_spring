@@ -2,16 +2,14 @@ package net.javaguides.springboot.springboothelloworldtutorial.Services;
 
 import net.javaguides.springboot.springboothelloworldtutorial.Product;
 
-import java.util.List;
-
 public interface ProductService {
-    Product createProduct(Product product);
+    Object getAllProduct();
 
-    Product updateProduct(Product product);
+    Object getProductById(long id);
 
-    List< Product > getAllProduct();
+    Object createProduct(Product product);
 
-    Product getProductById(long productId);
+    Object updateProduct(Product product);
 
     void deleteProduct(long id);
 }
