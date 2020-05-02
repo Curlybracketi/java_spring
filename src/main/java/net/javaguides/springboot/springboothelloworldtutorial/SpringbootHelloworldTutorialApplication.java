@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 public class SpringbootHelloworldTutorialApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(SpringbootHelloworldTutorialApplication.class, args);
 	}
 

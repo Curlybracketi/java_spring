@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.springboot.javaguides.model.Product;
-import net.springboot.javaguides.service.ProductService;
 
 @RestController
 public class ProductController {
@@ -25,22 +23,22 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResponseEntity < List <Product>> getAllProduct() {
+    public ResponseEntity <List<Product>> getAllProduct() {
         return ResponseEntity.ok().body(productService.getAllProduct());
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity < Product > getProductById(@PathVariable long id) {
+    public ResponseEntity <Product> getProductById(@PathVariable long id) {
         return ResponseEntity.ok().body(productService.getProductById(id));
     }
 
     @PostMapping("/products")
-    public ResponseEntity < Product > createProduct(@RequestBody Product product) {
+    public ResponseEntity <Product> createProduct(@RequestBody Product product) {
         return ResponseEntity.ok().body(this.productService.createProduct(product));
     }
 
     @PutMapping("/products/{id}")
-    public ResponseEntity < Product > updateProduct(@PathVariable long id, @RequestBody Product product) {
+    public ResponseEntity <Product> updateProduct(@PathVariable long id, @RequestBody Product product) {
         product.setId(id);
         return ResponseEntity.ok().body(this.productService.updateProduct(product));
     }
